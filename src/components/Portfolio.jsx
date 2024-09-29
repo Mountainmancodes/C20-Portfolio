@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Project from './Project';
-import projectImages from '../data/projectImages';
 
 function Portfolio() {
   const [projects, setProjects] = useState([]);
@@ -11,10 +10,10 @@ function Portfolio() {
         const response = await fetch('https://api.github.com/users/mountainmancodes/repos');
         const data = await response.json();
         
-        // Combine GitHub data with local image data
+        // Use a placeholder image for all projects
         const projectsWithImages = data.map(repo => ({
           ...repo,
-          imageUrl: projectImages[repo.name] || '/images/placeholder.png'
+          imageUrl: '/images/placeholder.png'
         }));
         
         setProjects(projectsWithImages);
