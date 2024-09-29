@@ -13,7 +13,7 @@ function Portfolio() {
         console.log('API URL:', import.meta.env.VITE_GITHUB_API_URL);
 
         // Fetch the repositories using the environment variable
-        const response = await fetch(`${import.meta.env.VITE_GITHUB_API_URL}/users/mountainmancodes/repos`);
+        const response = await fetch(`${import.meta.env.VITE_GITHUB_API_URL}/users/Mountainmancodes/repos`);
         
         // Check if the response is not OK (like 404 or any error response)
         if (!response.ok) {
