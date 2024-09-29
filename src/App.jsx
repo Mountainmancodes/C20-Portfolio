@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
@@ -19,7 +19,7 @@ function NotFound() {
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
         <Header />
         <main>
@@ -34,7 +34,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
