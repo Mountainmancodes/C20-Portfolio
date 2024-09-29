@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
@@ -18,22 +18,20 @@ function NotFound() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<About />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/resume" element={<Resume />} />
-            {/* Catch-all route for undefined paths */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/resume" element={<Resume />} />
+          {/* Catch-all route for undefined paths */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 }
 

@@ -9,7 +9,7 @@ export default defineConfig({
     open: true,
     proxy: {
       '/api': {
-        target: process.env.VITE_API_URL || 'https://api.github.com',
+        target: process.env.VITE_GITHUB_API_URL || 'https://api.github.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
@@ -20,16 +20,6 @@ export default defineConfig({
     assetsDir: 'assets',
     emptyOutDir: true,
     sourcemap: true,
-    minify: 'esbuild',
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            return 'vendor';
-          }
-        },
-      },
-    },
   },
   resolve: {
     alias: {

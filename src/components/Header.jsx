@@ -12,7 +12,6 @@ function Header() {
 
   return (
     <header>
-      <h1>Joshua Hernandez</h1>
       <nav>
         <ul>
           {navItems.map((item, index) => (

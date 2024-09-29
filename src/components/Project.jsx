@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Project({ name, description, imageUrl, repoUrl, deployedUrl }) {
   // Fallback to placeholder image if no imageUrl is provided
-  const defaultImage = '/images/placeholder.png';
+  const defaultImage = '/assets/images/placeholder.png';
 
   return (
     <div className="project-card">

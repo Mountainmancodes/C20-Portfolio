@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaDownload } from 'react-icons/fa';
+import { FaDownload, FaCode, FaLanguage, FaDatabase } from 'react-icons/fa';
 
 function Resume() {
   const handleResumeClick = () => {
@@ -9,18 +9,20 @@ function Resume() {
   return (
     <section id="resume" className="resume-section">
       <div className="resume-content">
-        <h2>Resume</h2>
-        <div className="download-resume">
+        <div className="resume-header">
+          <h2>Resume</h2>
           <button 
             className="resume-button" 
             onClick={handleResumeClick}
             aria-label="Download Resume"
           >
-            <FaDownload /> Download Resume
+            <FaDownload />Resume
           </button>
         </div>
+        
         <div className="skills">
           <div className="skill-category">
+            <FaCode className="skill-icon" />
             <h3>Frontend Technologies</h3>
             <ul>
               <li>Angular</li>
@@ -31,6 +33,7 @@ function Resume() {
             </ul>
           </div>
           <div className="skill-category">
+            <FaLanguage className="skill-icon" />
             <h3>Programming Languages</h3>
             <ul>
               <li>TypeScript</li>
@@ -38,6 +41,7 @@ function Resume() {
             </ul>
           </div>
           <div className="skill-category">
+            <FaDatabase className="skill-icon" />
             <h3>Backend & Databases</h3>
             <ul>
               <li>MongoDB</li>

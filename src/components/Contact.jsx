@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaEnvelope, FaGithub } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaPaperPlane } from 'react-icons/fa';
 
 function Contact() {
   const [name, setName] = useState('');
@@ -21,8 +21,7 @@ function Contact() {
     }
     setEmailError('');
     console.log('Form submitted:', { name, email, message });
-
-  
+    
     setSuccessMessage('Thank you for your message! We will get back to you soon.');
     setName('');
     setEmail('');
@@ -30,57 +29,60 @@ function Contact() {
   };
 
   return (
-    <section id="contact">
-      <h2>Contact</h2>
-      <div className="contact-info">
-        <div className="contact-item">
-          <FaEnvelope size={24} />
-          <a href="mailto:Colorado.jhernandez@gmail.com" className="contact-link">Colorado.JHernandez@gmail.com</a>
+    <section id="contact" className="contact-section">
+      <h2>Get in Touch</h2>
+      <div className="contact-container">
+        <div className="contact-info">
+          <h3>Contact Information</h3>
+          <div className="contact-item">
+            <FaEnvelope />
+            <a href="mailto:Colorado.jhernandez@gmail.com">Colorado.JHernandez@gmail.com</a>
+          </div>
+          <div className="contact-item">
+            <FaGithub />
+            <a href="https://github.com/mountainmancodes" target="_blank" rel="noopener noreferrer">
+              github.com/mountainmancodes
+            </a>
+          </div>
         </div>
-        <div className="contact-item">
-          <FaGithub size={24} />
-          <a href="https://github.com/mountainmancodes" target="_blank" rel="noopener noreferrer" className="contact-link">
-            github.com/mountainmancodes
-          </a>
-        </div>
+        <form onSubmit={handleSubmit} className="contact-form">
+          <div className="form-group">
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              placeholder="Your Name"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="Your Email"
+              aria-describedby={emailError ? 'email-error' : undefined}
+            />
+            {emailError && <p id="email-error" className="error">{emailError}</p>}
+          </div>
+          <div className="form-group">
+            <textarea
+              id="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+              placeholder="Your Message"
+            />
+          </div>
+          <button type="submit" className="submit-btn">
+            <FaPaperPlane /> Send Message
+          </button>
+        </form>
       </div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            aria-describedby={emailError ? 'email-error' : undefined}
-          />
-          {emailError && <p id="email-error" className="error">{emailError}</p>}
-        </div>
-        <div>
-          <label htmlFor="message">Message:</label>
-          <textarea
-            id="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit" aria-label="Send message">Send</button>
-      </form>
-
-      {/* Display success message after form submission */}
-      {successMessage && <p className="success">{successMessage}</p>}
+      {successMessage && <p className="success-message">{successMessage}</p>}
     </section>
   );
 }
