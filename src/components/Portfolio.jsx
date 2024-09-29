@@ -9,10 +9,17 @@ function Portfolio() {
   useEffect(() => {
     const fetchRepos = async () => {
       try {
+        // Log the environment variable to verify it's being loaded correctly
+        console.log('API URL:', import.meta.env.VITE_GITHUB_API_URL);
+
+        // Fetch the repositories using the environment variable
         const response = await fetch(`${import.meta.env.VITE_GITHUB_API_URL}/users/mountainmancodes/repos`);
+        
+        // Check if the response is not OK (like 404 or any error response)
         if (!response.ok) {
           throw new Error('Failed to fetch repositories');
         }
+
         const data = await response.json();
   
         // Use a placeholder image for all projects
@@ -20,7 +27,7 @@ function Portfolio() {
           ...repo,
           imageUrl: '/assets/images/placeholder.png'
         }));
-  
+
         setProjects(projectsWithImages);
         setLoading(false);
       } catch (error) {
@@ -29,7 +36,7 @@ function Portfolio() {
         setLoading(false);
       }
     };
-  
+
     fetchRepos();
   }, []);
 
