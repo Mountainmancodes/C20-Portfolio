@@ -33,17 +33,12 @@ function Contact() {
       <h2>Get in Touch</h2>
       <div className="contact-container">
         <div className="contact-info">
-          <h3>Contact Information</h3>
-          <div className="contact-item">
-            <FaEnvelope />
-            <a href="mailto:Colorado.jhernandez@gmail.com">Colorado.JHernandez@gmail.com</a>
-          </div>
-          <div className="contact-item">
-            <FaGithub />
-            <a href="https://github.com/mountainmancodes" target="_blank" rel="noopener noreferrer">
-              github.com/mountainmancodes
-            </a>
-          </div>
+          <a href="mailto:Colorado.JHernandez@gmail.com" className="contact-icon-link">
+            <FaEnvelope className="contact-icon" />
+          </a>
+          <a href="https://github.com/mountainmancodes" target="_blank" rel="noopener noreferrer" className="contact-icon-link">
+            <FaGithub className="contact-icon" />
+          </a>
         </div>
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">
@@ -88,3 +83,4 @@ function Contact() {
 }
 
 export default Contact;
+
