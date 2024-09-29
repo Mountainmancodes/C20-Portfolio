@@ -4,19 +4,6 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  root: './',
-  publicDir: 'public', 
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-    emptyOutDir: true,
-    sourcemap: true,
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'index.html'),
-      },
-    },
-  },
   server: {
     port: 3000,
     open: true,
@@ -27,6 +14,12 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+    sourcemap: true,
   },
   resolve: {
     alias: {
@@ -43,14 +36,9 @@ export default defineConfig({
     }
   },
   define: {
-    'process.env': process.env
+    'process.env': {}
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'react-icons']
   },
-  esbuild: {
-    loader: 'jsx',
-    include: /src\/.*\.jsx?$/,
-    exclude: []
-  }
 })
