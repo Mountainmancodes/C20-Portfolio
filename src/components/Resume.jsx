@@ -3,7 +3,7 @@ import { FaDownload } from 'react-icons/fa';
 
 function Resume() {
   const handleResumeClick = () => {
-    window.open('./assets/images/IT Systems Analyst Associate Resume.pdf', '_blank', 'noopener,noreferrer');
+    window.open('/assets/images/IT Systems Analyst Associate Resume.pdf', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -11,7 +11,11 @@ function Resume() {
       <div className="resume-content">
         <h2>Resume</h2>
         <div className="download-resume">
-          <button className="resume-button" onClick={handleResumeClick}>
+          <button 
+            className="resume-button" 
+            onClick={handleResumeClick}
+            aria-label="Download Resume"
+          >
             <FaDownload /> Download Resume
           </button>
         </div>

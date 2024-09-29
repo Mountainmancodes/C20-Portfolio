@@ -19,6 +19,7 @@ function Navigation() {
           className={({ isActive }) => 
             `tab-button ${isActive ? 'active' : ''}`
           }
+          aria-label={tab.name}
         >
           {tab.icon} {tab.name}
         </NavLink>

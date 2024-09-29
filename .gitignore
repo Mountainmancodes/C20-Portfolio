@@ -83,6 +83,9 @@ web_modules/
 .cache
 .parcel-cache
 
+# Vite build output
+/dist
+
 # Next.js build output
 .next
 out
@@ -129,9 +132,14 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# Netlify configuration
+netlify.toml
+
 # Misc
 package-lock.json
 /build
 .vscode
 .DS_Store
+.AppleDouble
+.LSOverride
 .env

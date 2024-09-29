@@ -2,12 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mountainmancodes - Portfolio showcasing projects and skills of Joshua Hernandez, a passionate software engineer." />
+    <meta name="keywords" content="portfolio, web development, software engineer, React, full-stack, Mountainmancodes, Joshua Hernandez" />
+    <meta name="author" content="Joshua Hernandez" />
+    
     <title>Mountainmancodes Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- Google Fonts (Roboto) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload key resources for performance -->
+    <link rel="preload" href="/src/main.jsx" as="script">
+    <link rel="preload" href="/src/index.css" as="style">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root" role="main"></div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

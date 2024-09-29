@@ -1,337 +1,358 @@
 /* Reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Roboto', Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* Header styles */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Ensure footer stays at the bottom */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1; /* Allows the main content to push the footer down */
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav a:hover, nav a.active {
+  background-color: #555;
+}
+
+nav a svg {
+  font-size: 1.2em;
+}
+
+/* About section styles */
+.about-section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-info {
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.bio {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.bio h2 {
+  margin-bottom: 1rem;
+}
+
+.bio p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: #007bff;
+}
+
+/* Portfolio section styles */
+#portfolio {
+  padding: 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 1rem;
+}
+
+.project-info h3 {
+  margin-top: 0;
+}
+
+.project-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.project-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+/* Resume section styles */
+.resume-section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.resume-content {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.download-resume {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.resume-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.resume-button:hover {
+  background-color: #0056b3;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category h3 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.skill-category ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skill-category li {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.skill-category li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+}
+
+/* Contact section styles */
+#contact {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-link {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #0056b3;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Error message styles */
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+/* Success message styles */
+.success {
+  color: green;
+  font-size: 0.9rem;
+}
+
+button[type="submit"] {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
   header {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  header h1 {
-    margin: 0;
-    font-size: 1.5rem;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    gap: 1rem;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  nav a:hover, nav a.active {
-    background-color: #555;
-  }
-  
-  nav a svg {
-    font-size: 1.2em;
-  }
-  
-  /* About section styles */
-  .about-section {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .about-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .profile-info {
-    margin-bottom: 2rem;
-  }
-  
-  .avatar {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-  }
-  
-  .name {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .title {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 1rem;
-  }
-  
-  .bio {
-    margin-bottom: 2rem;
-    text-align: left;
-  }
-  
-  .bio h2 {
-    margin-bottom: 1rem;
-  }
-  
-  .bio p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-  
-  .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .contact-links a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .contact-links a:hover {
-    color: #007bff;
-  }
-  
-  /* Portfolio section styles */
-  #portfolio {
-    padding: 2rem;
-  }
-  
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-  
-  .project-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .project-info {
-    padding: 1rem;
-  }
-  
-  .project-info h3 {
-    margin-top: 0;
-  }
-  
-  .project-links {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-  }
-  
-  .project-link {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .project-link:hover {
-    text-decoration: underline;
-  }
-  
-  /* Resume section styles */
-  .resume-section {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .resume-content {
-    background-color: #f8f9fa;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .download-resume {
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-  
-  .resume-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .resume-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-  }
-  
-  .skill-category h3 {
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  .skill-category ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .skill-category li {
-    margin-bottom: 0.5rem;
-    padding-left: 1rem;
-    position: relative;
-  }
-  
-  .skill-category li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #007bff;
-  }
-  
-  /* Contact section styles */
-  #contact {
-    padding: 2rem;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .contact-info {
-    margin-bottom: 2rem;
-  }
-  
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .contact-link {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .contact-link:hover {
-    color: #0056b3;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  input, textarea {
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  button[type="submit"] {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Footer styles */
-  .footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    header {
       flex-direction: column;
       text-align: center;
-    }
-  
-    nav ul {
+  }
+
+  nav ul {
       margin-top: 1rem;
       flex-wrap: wrap;
       justify-content: center;
-    }
-  
-    .about-content {
-      text-align: center;
-    }
-  
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .skills {
-      grid-template-columns: 1fr;
-    }
   }
+
+  .about-content {
+      text-align: center;
+  }
+
+  .projects-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .skills {
+      grid-template-columns: 1fr;
+  }
+}

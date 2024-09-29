@@ -6,6 +6,7 @@ function Contact() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [emailError, setEmailError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const validateEmail = (email) => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -20,6 +21,9 @@ function Contact() {
     }
     setEmailError('');
     console.log('Form submitted:', { name, email, message });
+
+  
+    setSuccessMessage('Thank you for your message! We will get back to you soon.');
     setName('');
     setEmail('');
     setMessage('');
@@ -59,8 +63,9 @@ function Contact() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            aria-describedby={emailError ? 'email-error' : undefined}
           />
-          {emailError && <p className="error">{emailError}</p>}
+          {emailError && <p id="email-error" className="error">{emailError}</p>}
         </div>
         <div>
           <label htmlFor="message">Message:</label>
@@ -71,8 +76,11 @@ function Contact() {
             required
           />
         </div>
-        <button type="submit">Send</button>
+        <button type="submit" aria-label="Send message">Send</button>
       </form>
+
+      {/* Display success message after form submission */}
+      {successMessage && <p className="success">{successMessage}</p>}
     </section>
   );
 }

@@ -1,10 +1,8 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FaUser, FaCode, FaEnvelope, FaFileAlt } from 'react-icons/fa';
 
 function Header() {
-  const location = useLocation();
-
   const navItems = [
     { name: 'About Me', icon: <FaUser />, path: '/' },
     { name: 'Portfolio', icon: <FaCode />, path: '/portfolio' },
@@ -19,12 +17,13 @@ function Header() {
         <ul>
           {navItems.map((item, index) => (
             <li key={index}>
-              <Link 
-                to={item.path} 
-                className={location.pathname === item.path ? 'active' : ''}
+              <NavLink 
+                to={item.path}
+                className={({ isActive }) => isActive ? 'active' : ''}
+                aria-label={item.name}
               >
                 {item.icon} {item.name}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
