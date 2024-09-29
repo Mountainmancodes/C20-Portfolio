@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
@@ -11,9 +11,9 @@ export default defineConfig({
       '/api': {
         target: 'https://api.github.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
-    }
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
   },
   build: {
     outDir: 'dist',
@@ -32,13 +32,10 @@ export default defineConfig({
   },
   css: {
     modules: {
-      localsConvention: 'camelCaseOnly'
-    }
-  },
-  define: {
-    'process.env': {}
+      localsConvention: 'camelCaseOnly',
+    },
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', 'react-icons']
+    include: ['react', 'react-dom', 'react-router-dom', 'react-icons'],
   },
-})
+});
