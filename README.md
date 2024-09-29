@@ -123,6 +123,5 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - GitHub: [@mountainmancodes](https://github.com/mountainmancodes)
 - Email: Colorado.jhernandez@gmail.com
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/your-linkedin)
 
 Feel free to reach out if you have any questions or would like to connect!
