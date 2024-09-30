@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Project from './Project';
+import { FaGithub, FaGlobe } from 'react-icons/fa';
 
 function Portfolio() {
   const [projects, setProjects] = useState([]);

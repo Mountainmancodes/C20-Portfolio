@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FaGithub, FaGlobe } from 'react-icons/fa';
 
 function Project({ name, description, imageUrl, repoUrl, deployedUrl }) {
   // Fallback to placeholder image if no imageUrl is provided
@@ -16,12 +17,12 @@ function Project({ name, description, imageUrl, repoUrl, deployedUrl }) {
         <h3>{name}</h3>
         <p>{description || 'No description available'}</p>
         <div className="project-links">
-          <a href={repoUrl} target="_blank" rel="noopener noreferrer" className="btn" aria-label={`GitHub repository for ${name}`}>
-            GitHub Repo
+          <a href={repoUrl} target="_blank" rel="noopener noreferrer" className="icon-link" aria-label={`GitHub repository for ${name}`}>
+            <FaGithub size={30} /> 
           </a>
           {deployedUrl && (
-            <a href={deployedUrl} target="_blank" rel="noopener noreferrer" className="btn" aria-label={`Deployed app for ${name}`}>
-              Deployed App
+            <a href={deployedUrl} target="_blank" rel="noopener noreferrer" className="icon-link" aria-label={`Deployed app for ${name}`}>
+              <FaGlobe size={30} />  
             </a>
           )}
         </div>

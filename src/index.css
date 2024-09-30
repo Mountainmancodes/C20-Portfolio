@@ -213,26 +213,23 @@ nav a svg {
   -webkit-box-orient: vertical;
 }
 
+/* Updated styles for project links */
 .project-links {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;  /* Center icons with space around */
   gap: 1rem;
   font-size: 0.8rem;
   margin-top: auto;
 }
 
-.project-link {
+.icon-link {
   color: var(--primary-color);
   text-decoration: none;
-  padding: 0.25rem 0.5rem;
-  border: 1px solid var(--primary-color);
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-.project-link:hover {
-  background-color: var(--primary-color);
-  color: var(--bg-light);
+.icon-link:hover {
+  transform: scale(1.1);  /* Enlarge icon on hover */
 }
 
 /* Resume section styles */
