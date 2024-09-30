@@ -34,7 +34,8 @@ This is a personal portfolio website built with React, showcasing my skills, pro
 - React
 - React Router for navigation
 - Vite as the build tool
-- CSS for styling
+- Pico CSS for minimal, responsive styling
+- Custom CSS for styling
 - React Icons for icon components
 - GitHub API for fetching project data
 
