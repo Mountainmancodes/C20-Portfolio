@@ -12,7 +12,7 @@ function About() {
         </div>
         
         <div className="bio">
-          <h2>About Me</h2>
+          <h2>About</h2>
           <p>
             Hello! I'm Joshua Hernandez, a passionate software engineer with a love for creating 
             innovative solutions. As a father and a techno-optimist, I believe in the power of 
