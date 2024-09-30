@@ -1,12 +1,12 @@
-# C20-Portfolio - Joshua Hernandez
+# C20-Portfolio
 
 ## Description
 
 This is a personal portfolio website built with React, showcasing my skills, projects, and professional information as a Software Engineer. The portfolio is designed to provide visitors with an overview of my experience, technical proficiencies, and a showcase of my recent projects.
 
-**Note:** Much of the code in this project has been reused and adapted from my previous portfolio project, which can be found at [https://github.com/Mountainmancodes/Portfolio-Project](Portfolio-Project). This new version represents an adaptation of that project, incorporating new features and improvements based on the needs of the project.
+**Note:** Much of the code in this project has been reused and adapted from my previous portfolio project, which can be found at [Portfolio-Project](https://github.com/Mountainmancodes/Portfolio-Project). This new version represents an adaptation of that project, incorporating new features and improvements based on the needs of the project.
 
-**Deployed Website:** [https://66f9f83d79f4020008554020--gleaming-croquembouche-9e820f.netlify.app/](C20-Portfolio)
+**Deployed Website:** [C20-Portfolio](https://66f9f83d79f4020008554020--gleaming-croquembouche-9e820f.netlify.app/)
 
 ## Table of Contents
 
@@ -116,12 +116,12 @@ portfolio/
 
 This project builds upon and refines code from my previous portfolio project. The original project, which served as a foundation for this work, can be found at:
 
-[https://github.com/Mountainmancodes/Portfolio-Project](Portfolio-Project)
+[Portfolio-Project](https://github.com/Mountainmancodes/Portfolio-Project)
 
 ## Deployment
 
 This project is deployed on Netlify. The live version can be accessed at:
-[https://66f9f83d79f4020008554020--gleaming-croquembouche-9e820f.netlify.app/](C20-Portfolio)
+[C20-Portfolio](https://66f9f83d79f4020008554020--gleaming-croquembouche-9e820f.netlify.app/)
 
 For deploying your own version, follow the platform-specific instructions for deploying a Vite React app on your chosen hosting platform.
 
