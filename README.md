@@ -6,8 +6,6 @@ This is a personal portfolio website built with React, showcasing my skills, pro
 
 **Note:** Much of the code in this project has been reused and adapted from my previous portfolio project, which can be found at [Portfolio-Project](https://github.com/Mountainmancodes/Portfolio-Project). This new version represents an adaptation of that project, incorporating new features and improvements based on the needs of the project.
 
-**Deployed Website:** [C20-Portfolio](https://66f9f83d79f4020008554020--gleaming-croquembouche-9e820f.netlify.app/)
-
 ## Table of Contents
 
 - [Features](#features)
