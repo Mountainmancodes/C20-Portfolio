@@ -1,10 +1,12 @@
-# C20-Portfolio
+# C20-Portfolio - Joshua Hernandez
 
 ## Description
 
 This is a personal portfolio website built with React, showcasing my skills, projects, and professional information as a Software Engineer. The portfolio is designed to provide visitors with an overview of my experience, technical proficiencies, and a showcase of my recent projects.
 
-**Note:** Much of the code in this project has been reused and adapted from my previous portfolio project, which can be found at [https://github.com/Mountainmancodes/Portfolio-Project](https://github.com/Mountainmancodes/Portfolio-Project). This new version represents an adaptation of that project, incorporating new features and improvements based on needs of the project.
+**Note:** Much of the code in this project has been reused and adapted from my previous portfolio project, which can be found at [https://github.com/Mountainmancodes/Portfolio-Project](Portfolio-Project). This new version represents an adaptation of that project, incorporating new features and improvements based on the needs of the project.
+
+**Deployed Website:** [https://66f9f83d79f4020008554020--gleaming-croquembouche-9e820f.netlify.app/](C20-Portfolio)
 
 ## Table of Contents
 
@@ -34,7 +36,7 @@ This is a personal portfolio website built with React, showcasing my skills, pro
 - React
 - React Router for navigation
 - Vite as the build tool
-- CSS Modules for styling
+- CSS for styling
 - React Icons for icon components
 - GitHub API for fetching project data
 
@@ -44,7 +46,7 @@ To set up this project locally, follow these steps:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/mountainmancodes/portfolio.git
+   git clone https://github.com/Mountainmancodes/portfolio.git
    ```
 2. Navigate to the project directory:
    ```
@@ -53,6 +55,10 @@ To set up this project locally, follow these steps:
 3. Install dependencies:
    ```
    npm install
+   ```
+4. Create a `.env` file in the root directory and add your GitHub API URL:
+   ```
+   VITE_GITHUB_API_URL=https://api.github.com
    ```
 
 ## Usage
@@ -73,6 +79,12 @@ npm run build
 
 This will generate a production-ready build in the `dist` directory.
 
+To preview the production build:
+
+```
+npm run preview
+```
+
 ## Project Structure
 
 ```
@@ -86,8 +98,6 @@ portfolio/
 │   │   ├── Resume.jsx
 │   │   ├── Contact.jsx
 │   │   └── Footer.jsx
-│   ├── data/
-│   │   └── projectImages.js
 │   ├── assets/
 │   │   └── images/
 │   ├── App.jsx
@@ -98,6 +108,7 @@ portfolio/
 ├── index.html
 ├── package.json
 ├── vite.config.js
+├── .eslintrc.cjs
 └── README.md
 ```
 
@@ -105,11 +116,14 @@ portfolio/
 
 This project builds upon and refines code from my previous portfolio project. The original project, which served as a foundation for this work, can be found at:
 
-[https://github.com/Mountainmancodes/Portfolio-Project](https://github.com/Mountainmancodes/Portfolio-Project)
+[https://github.com/Mountainmancodes/Portfolio-Project](Portfolio-Project)
 
 ## Deployment
 
-This project is set up to be easily deployed to platforms like Netlify or GitHub Pages. Follow the platform-specific instructions for deploying a Vite React app.
+This project is deployed on Netlify. The live version can be accessed at:
+[https://66f9f83d79f4020008554020--gleaming-croquembouche-9e820f.netlify.app/](C20-Portfolio)
+
+For deploying your own version, follow the platform-specific instructions for deploying a Vite React app on your chosen hosting platform.
 
 ## Contributing
 
@@ -122,6 +136,6 @@ This project is open source and available under the [MIT License](LICENSE).
 ## Contact
 
 - GitHub: [@mountainmancodes](https://github.com/mountainmancodes)
-- Email: Colorado.jhernandez@gmail.com
+- Email: Colorado.JHernandez@gmail.com
 
 Feel free to reach out if you have any questions or would like to connect!
