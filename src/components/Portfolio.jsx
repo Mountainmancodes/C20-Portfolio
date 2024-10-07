@@ -12,9 +12,13 @@ function Portfolio() {
       try {
         console.log('API URL:', import.meta.env.VITE_GITHUB_API_URL);
 
-        // Fetch the repositories using the environment variable
-        const response = await fetch(`${import.meta.env.VITE_GITHUB_API_URL}/users/Mountainmancodes/repos`);
-        
+        // Fetch the repositories using the environment variable and authentication token
+        const response = await fetch(`${import.meta.env.VITE_GITHUB_API_URL}/users/Mountainmancodes/repos`, {
+          headers: {
+            Authorization: `token ${import.meta.env.VITE_GITHUB_ACCESS_TOKEN}`, // Use token from .env
+          },
+        });
+
         if (!response.ok) {
           throw new Error('Failed to fetch repositories');
         }
@@ -25,14 +29,19 @@ function Portfolio() {
         const fetchReadme = async (repoName) => {
           const readmeResponse = await fetch(
             `${import.meta.env.VITE_GITHUB_API_URL}/repos/Mountainmancodes/${repoName}/readme`,
-            { headers: { Accept: 'application/vnd.github.v3.raw' } }
+            {
+              headers: {
+                Accept: 'application/vnd.github.v3.raw',
+                Authorization: `token ${import.meta.env.VITE_GITHUB_ACCESS_TOKEN}`, // Use token for README fetch too
+              },
+            }
           );
           if (!readmeResponse.ok) {
             return { imageUrl: null, description: null };
           }
 
           const readmeContent = await readmeResponse.text();
-          
+
           // Use a regex to extract the first image from the markdown
           const imageMatch = readmeContent.match(/!\[.*?\]\((.*?)\)/);
 
