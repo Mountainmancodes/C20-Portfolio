@@ -15,6 +15,7 @@ This is a personal portfolio website built with React, showcasing my skills, pro
 - [Project Structure](#project-structure)
 - [Code Reuse and Attribution](#code-reuse-and-attribution)
 - [Deployment](#deployment)
+- [Screenshots](#screenshots)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
