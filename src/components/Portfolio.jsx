@@ -34,7 +34,17 @@ function Portfolio() {
           
           // Use a regex to extract the first image from the markdown
           const imageMatch = readmeContent.match(/!\[.*?\]\((.*?)\)/);
-          return imageMatch ? imageMatch[1] : null;  // Return the image URL or null if not found
+
+          if (imageMatch) {
+            // Ensure that the image URL is absolute
+            let imageUrl = imageMatch[1];
+            if (!imageUrl.startsWith('http')) {
+              imageUrl = `https://raw.githubusercontent.com/Mountainmancodes/${repoName}/main/${imageUrl}`;
+            }
+            return imageUrl;
+          }
+
+          return null;
         };
 
         // Fetch README images for all repositories
@@ -80,7 +90,7 @@ function Portfolio() {
           <Project
             key={project.id}
             name={project.name}
-            description={project.description}
+            description={project.description || 'No description available'}
             imageUrl={project.imageUrl}
             repoUrl={project.html_url}
             deployedUrl={project.homepage}

@@ -124,11 +124,11 @@ This project is deployed on Netlify. The live version can be accessed at:
 
 Screenshots:
 
-![About Page](/assets/images/About.png)
+![About Page](public\assets\images\About.png)
 
-![Contact Page](/assets/images/Contact.png)
+![Contact Page](public\assets\images\Contact.png)
 
-![Resume Page](/assets/images/Resume.png)
+![Resume Page](public\assets\images\Resume.png)
 
 For deploying your own version, follow the platform-specific instructions for deploying a Vite React app on your chosen hosting platform.
 
