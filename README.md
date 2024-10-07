@@ -122,11 +122,21 @@ This project builds upon and refines code from my previous portfolio project. Th
 This project is deployed on Netlify. The live version can be accessed at:
 [C20-Portfolio](https://mountainmancodes-portfolio.netlify.app/) <----- LINK TO DEPLOYED SITE
 
-Screenshots:
+## Screenshots
+
+### About Page
 
 ![About Page](./public/assets/images/About.png)
 
+### Portfolio Page
+
+![Portfolio Page](./public/assets/images/Portfolio.png)
+
+### Contact Page
+
 ![Contact Page](./public/assets/images/Contact.png)
+
+### Resume Page
 
 ![Resume Page](./public/assets/images/Resume.png)
 

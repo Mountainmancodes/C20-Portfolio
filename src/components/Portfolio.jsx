@@ -21,44 +21,46 @@ function Portfolio() {
 
         const repos = await response.json();
 
-        // Function to fetch README for each repository
+        // Function to fetch README and extract image and description
         const fetchReadme = async (repoName) => {
           const readmeResponse = await fetch(
             `${import.meta.env.VITE_GITHUB_API_URL}/repos/Mountainmancodes/${repoName}/readme`,
             { headers: { Accept: 'application/vnd.github.v3.raw' } }
           );
           if (!readmeResponse.ok) {
-            return null;
+            return { imageUrl: null, description: null };
           }
+
           const readmeContent = await readmeResponse.text();
           
           // Use a regex to extract the first image from the markdown
           const imageMatch = readmeContent.match(/!\[.*?\]\((.*?)\)/);
 
-          if (imageMatch) {
-            // Ensure that the image URL is absolute
-            let imageUrl = imageMatch[1];
-            if (!imageUrl.startsWith('http')) {
-              imageUrl = `https://raw.githubusercontent.com/Mountainmancodes/${repoName}/main/${imageUrl}`;
-            }
-            return imageUrl;
+          let imageUrl = imageMatch ? imageMatch[1] : null;
+          if (imageUrl && !imageUrl.startsWith('http')) {
+            imageUrl = `https://raw.githubusercontent.com/Mountainmancodes/${repoName}/main/${imageUrl}`;
           }
 
-          return null;
+          // Extract the first paragraph or heading for description
+          const descriptionMatch = readmeContent.match(/(?:^|\n)(?!#)([^\n#]+)(?:\n|$)/);
+          const description = descriptionMatch ? descriptionMatch[1].trim() : 'No description available';
+
+          return { imageUrl, description };
         };
 
-        // Fetch README images for all repositories
-        const projectsWithImages = await Promise.all(
+        // Fetch README images and descriptions for all repositories
+        const projectsWithDetails = await Promise.all(
           repos.map(async (repo) => {
-            const imageUrl = await fetchReadme(repo.name);
+            const { imageUrl, description } = await fetchReadme(repo.name);
             return {
               ...repo,
               imageUrl: imageUrl || '/assets/images/placeholder.png', // Fallback to placeholder if no image found
+              description: description || 'No description available', // Fallback if no description found
             };
           })
         );
 
-        setProjects(projectsWithImages);
+        setProjects(projectsWithDetails);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching repos:', error);
