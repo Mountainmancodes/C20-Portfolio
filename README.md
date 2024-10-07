@@ -120,7 +120,15 @@ This project builds upon and refines code from my previous portfolio project. Th
 ## Deployment
 
 This project is deployed on Netlify. The live version can be accessed at:
-[C20-Portfolio](https://66f9f83d79f4020008554020--gleaming-croquembouche-9e820f.netlify.app/)
+[C20-Portfolio](https://mountainmancodes-portfolio.netlify.app/) <----- LINK TO DEPLOYED SITE
+
+Screenshots:
+
+![About Page](/assets/images/About.png)
+
+![Contact Page](/assets/images/Contact.png)
+
+![Resume Page](/assets/images/Resume.png)
 
 For deploying your own version, follow the platform-specific instructions for deploying a Vite React app on your chosen hosting platform.
 

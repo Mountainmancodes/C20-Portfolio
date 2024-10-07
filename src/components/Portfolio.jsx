@@ -10,24 +10,43 @@ function Portfolio() {
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        // Log the environment variable to verify it's being loaded correctly
         console.log('API URL:', import.meta.env.VITE_GITHUB_API_URL);
 
         // Fetch the repositories using the environment variable
         const response = await fetch(`${import.meta.env.VITE_GITHUB_API_URL}/users/Mountainmancodes/repos`);
         
-        // Check if the response is not OK (like 404 or any error response)
         if (!response.ok) {
           throw new Error('Failed to fetch repositories');
         }
 
-        const data = await response.json();
-  
-        // Use a placeholder image for all projects
-        const projectsWithImages = data.map(repo => ({
-          ...repo,
-          imageUrl: '/assets/images/placeholder.png'
-        }));
+        const repos = await response.json();
+
+        // Function to fetch README for each repository
+        const fetchReadme = async (repoName) => {
+          const readmeResponse = await fetch(
+            `${import.meta.env.VITE_GITHUB_API_URL}/repos/Mountainmancodes/${repoName}/readme`,
+            { headers: { Accept: 'application/vnd.github.v3.raw' } }
+          );
+          if (!readmeResponse.ok) {
+            return null;
+          }
+          const readmeContent = await readmeResponse.text();
+          
+          // Use a regex to extract the first image from the markdown
+          const imageMatch = readmeContent.match(/!\[.*?\]\((.*?)\)/);
+          return imageMatch ? imageMatch[1] : null;  // Return the image URL or null if not found
+        };
+
+        // Fetch README images for all repositories
+        const projectsWithImages = await Promise.all(
+          repos.map(async (repo) => {
+            const imageUrl = await fetchReadme(repo.name);
+            return {
+              ...repo,
+              imageUrl: imageUrl || '/assets/images/placeholder.png', // Fallback to placeholder if no image found
+            };
+          })
+        );
 
         setProjects(projectsWithImages);
         setLoading(false);
