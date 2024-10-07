@@ -45,18 +45,25 @@ This is a personal portfolio website built with React, showcasing my skills, pro
 To set up this project locally, follow these steps:
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/Mountainmancodes/portfolio.git
    ```
+
 2. Navigate to the project directory:
+
    ```
    cd portfolio
    ```
+
 3. Install dependencies:
+
    ```
    npm install
    ```
+
 4. Create a `.env` file in the root directory and add your GitHub API URL:
+
    ```
    VITE_GITHUB_API_URL=https://api.github.com
    ```
@@ -98,10 +105,10 @@ portfolio/
 │   │   ├── Resume.jsx
 │   │   ├── Contact.jsx
 │   │   └── Footer.jsx
-│   ├── assets/
-│   │   └── images/
 │   ├── App.jsx
+│   ├── index.css
 │   └── main.jsx
+│   
 ├── public/
 │   └── assets/
 │       └── images/
@@ -154,6 +161,6 @@ This project is open source and available under the [MIT License](LICENSE).
 ## Contact
 
 - GitHub: [@mountainmancodes](https://github.com/mountainmancodes)
-- Email: Colorado.JHernandez@gmail.com
+- Email: <Colorado.JHernandez@gmail.com>
 
 Feel free to reach out if you have any questions or would like to connect!
