@@ -211,9 +211,10 @@ nav a svg {
   flex-grow: 1;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2; 
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  transition: all 0.3s ease;
+  white-space: normal;
+  text-overflow: ellipsis;
 }
 
 .project-links {
